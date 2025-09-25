@@ -1,0 +1,7 @@
+rembg==2.0.50
+onnxruntime==1.16.3
+numpy==1.26.4
+pillow==10.2.0
+opencv-python==4.9.0.80
+requests==2.31.0
+plyer==2.1.0
