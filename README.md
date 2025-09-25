@@ -1,12 +1,12 @@
-# EFI — Eliminar fondo de imagen con IA  
+# Eliminar fondo de imagen con IA  
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange.svg)](#-contribuciones)  
 
-Aplicación de código abierto desarrollada en **Python** que permite **eliminar el fondo de imágenes automáticamente**.  
+EFI es una aplicación de código abierto desarrollada en **Python** que permite **eliminar el fondo de imágenes automáticamente**.  
 Ideal para diseñadores, creadores de contenido y usuarios que necesiten una edición rápida sin herramientas complejas.  
 
-[![EFI](./resources/efi-log2.png)]
+![EFI](./resources/efi-log2.png)
 
 ---
 

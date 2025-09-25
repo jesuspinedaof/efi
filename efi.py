@@ -396,7 +396,7 @@ class BackgroundRemoverApp:
             
             self.processing = True
             self.btn_select.config(state=tk.DISABLED)
-            self.status_label.config(text="Preparando...")
+            self.status_label.config(text="Descargando modelo de IA...")
             self.root.update_idletasks()
             
             threading.Thread(
@@ -409,11 +409,17 @@ class BackgroundRemoverApp:
         try:
             model_filename = "u2net_human_seg.onnx" if self.mode == "personas" else "u2net.onnx"
             model_path = os.path.join(CACHE_DIR, model_filename)
+            
+            # MOSTRAR la barra de progreso ANTES de verificar/descargar el modelo
+            self.progress.pack()
+            self.progress['value'] = 0
+            self.root.update_idletasks()
+            
             if not os.path.exists(model_path):
-                self.download_model(model_path)
+                self.download_model(model_path)  # Esta función ya actualiza la barra
             
             self.status_label.config(text="Procesando imagen (esto puede tardar)...")
-            self.progress.pack()
+            self.progress['value'] = 50  # Progreso intermedio
             self.root.update_idletasks()
             
             start_time = time.time()
@@ -431,6 +437,8 @@ class BackgroundRemoverApp:
             )
             
             processing_time = time.time() - start_time
+            self.progress['value'] = 100
+            self.root.update_idletasks()
             
             self.current_image = Image.open(BytesIO(output_image))
             base_name = os.path.splitext(input_path)[0]
@@ -455,7 +463,7 @@ class BackgroundRemoverApp:
             messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
         finally:
             self.processing = False
-            self.progress.pack_forget()
+            self.progress.pack_forget()  # OCULTAR la barra al final
             self.btn_select.config(state=tk.NORMAL)
             self.root.update_idletasks()
     
