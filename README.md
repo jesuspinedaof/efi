@@ -29,7 +29,7 @@ Ideal para diseñadores, creadores de contenido y usuarios que necesiten una edi
 ## Instalación
 
 ### 🔹 Opción 1 — Binarios
-- **Windows:** Descargar el archivo `.exe`  
+- **Windows:** Descargar el archivo [.exe](https://github.com/jesuspinedaof/efi/releases/download/v1.0/efi.setup.exe)  
 - **Linux:** Descargar el `.deb`, `AppImage` o `Flatpak`
 - **MacOs:** Se recomienda ***clonar*** el repositorio
 
@@ -47,6 +47,13 @@ pip install -r requirements.txt
 - Carga y procesamiento manual  
 - Validación de distintos formatos de imagen  
 - Rendimiento con imágenes grandes  
+
+![](./resources/efi-log4.png)
+
+
+
+
+![](./resources/efi-log5.png)
 
 ---
 
