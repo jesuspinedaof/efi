@@ -11,7 +11,7 @@ Linktree: https://linktr.ee/jesuspinedaof
 Licencia: MIT License
 """
 
-
+# --- Librerias ---
 import cv2
 import sys
 import numpy as np
@@ -61,7 +61,6 @@ def get_cache_dir():
 CACHE_DIR = get_cache_dir()
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# MUY IMPORTANTE: decirle a rembg dónde están/irán los modelos
 os.environ.setdefault("U2NET_HOME", CACHE_DIR)
 
 class BackgroundRemoverApp:
@@ -277,7 +276,7 @@ class BackgroundRemoverApp:
         def link(txt, url):
             return ttk.Button(links_frame, text=txt, style='Toolbutton',
                             command=lambda: webbrowser.open(url))
-        link("Documentacion", (Path(resource_path('resources/documentacion_efi.html')).as_uri())).pack(side="left", padx=6)
+        link("Documentacion", "https://jesuspinedaof.github.io/efi/").pack(side="left", padx=6)
         ttk.Button(links_frame, text="Instrucciones", style="Toolbutton",
            command=self._instructions_window).pack(side="left", padx=6)
         link("GitHub",   "https://github.com/jesuspinedaof").pack(side="left", padx=6)
@@ -294,7 +293,9 @@ class BackgroundRemoverApp:
             bg="#f5f5f5"
         )
         version_label.pack(side="bottom", pady=(10, 0))
-        
+
+    # --------------- Intructions ----------------------------
+
     def _instructions_window(self):
         win = tk.Toplevel()
         win.title("Instrucciones de la aplicación")
@@ -357,7 +358,7 @@ class BackgroundRemoverApp:
         def link(txt, url):
             return ttk.Button(links_frame, text=txt, style='Toolbutton',
                             command=lambda: webbrowser.open(url))
-        link("Documentacion", f"file://{os.path.abspath('resources/documentacion_efi.html')}").pack(side="left", padx=6)
+        link("Documentacion", "https://jesuspinedaof.github.io/efi/").pack(side="left", padx=6)
         link("GitHub",   "https://github.com/jesuspinedaof").pack(side="left", padx=6)
         link("Linktree","https://linktr.ee/jesuspinedaof").pack(side="left", padx=6)
 
@@ -410,16 +411,15 @@ class BackgroundRemoverApp:
             model_filename = "u2net_human_seg.onnx" if self.mode == "personas" else "u2net.onnx"
             model_path = os.path.join(CACHE_DIR, model_filename)
             
-            # MOSTRAR la barra de progreso ANTES de verificar/descargar el modelo
             self.progress.pack()
             self.progress['value'] = 0
             self.root.update_idletasks()
             
             if not os.path.exists(model_path):
-                self.download_model(model_path)  # Esta función ya actualiza la barra
+                self.download_model(model_path)
             
             self.status_label.config(text="Procesando imagen (esto puede tardar)...")
-            self.progress['value'] = 50  # Progreso intermedio
+            self.progress['value'] = 50 
             self.root.update_idletasks()
             
             start_time = time.time()
@@ -463,7 +463,7 @@ class BackgroundRemoverApp:
             messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
         finally:
             self.processing = False
-            self.progress.pack_forget()  # OCULTAR la barra al final
+            self.progress.pack_forget()
             self.btn_select.config(state=tk.NORMAL)
             self.root.update_idletasks()
     
