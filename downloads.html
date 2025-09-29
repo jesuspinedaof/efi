@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFI - Descargas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="logo.svg" alt="EFI Logo" class="h-6">
+        <span class="font-bold text-blue-700">EFI</span>
+      </div>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-600 hover:text-blue-600">Inicio</a>
+        <a href="docs.html" class="text-gray-600 hover:text-blue-600">Documentación</a>
+        <a href="downloads.html" class="text-blue-600 font-semibold">Descargas</a>
+        <a href="donations.html" class="text-gray-600 hover:text-blue-600">Donaciones</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+    <h2 class="text-4xl font-bold mb-4">La manera más rápida de empezar con EFI</h2>
+    <p class="text-lg mb-6">Descarga la versión adecuada para tu dispositivo y disfruta de edición de imágenes potenciada por IA</p>
+    <a href="#opciones" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-100">Descargar ahora</a>
+  </section>
+
+  <main id="#opciones" class="max-w-5xl mx-auto py-16 px-6">
+    <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">Descargar EFI</h2>
+    <p class="mb-10 text-center text-gray-600">Selecciona tu sistema operativo para descargar la última versión.</p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" class="h-12 mx-auto mb-4" alt="Windows">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Windows</h3>
+        <p class="mb-4 text-gray-600">Instalador en formato <code>.exe</code></p>
+        <a href="https://github.com/jesuspinedaof/efi/releases/download/v1.0/efi.setup.exe" class="px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Descargar</a>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="h-12 mx-auto mb-4" alt="Linux">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Linux</h3>
+        <p class="mb-4 text-gray-600">Formatos: <code>.deb</code>, <code>AppImage</code>, <code>Flatpak</code></p>
+        <a href="#" class="px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Descargar</a>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" class="h-12 mx-auto mb-4" alt="macOS">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">macOS</h3>
+        <p class="mb-4 text-gray-600">Paquete en formato <code>.dmg</code></p>
+        <a href="#" class="px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">Descargar</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 text-sm border-t">
+    © 2025 - Jesús Pineda | Licencia MIT
+  </footer>
+</body>
+</html>

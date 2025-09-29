@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFI - Documentación</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 flex flex-col">
+    <div class="p-6 flex items-center space-x-3 border-b">
+      <img src="logo.svg" alt="EFI Logo" class="h-8">
+      <span class="text-lg font-bold text-blue-600">EFI Docs</span>
+    </div>
+    <nav class="flex-1 p-4 space-y-3 text-gray-700">
+      <a href="#descripcion" class="block hover:text-blue-600">Descripción</a>
+      <a href="#instalacion" class="block hover:text-blue-600">Instalación</a>
+      <a href="#funcionalidades" class="block hover:text-blue-600">Funcionalidades</a>
+      <a href="#contribuciones" class="block hover:text-blue-600">Contribuciones</a>
+      <a href="#recursos" class="block hover:text-blue-600">Recursos</a>
+    </nav>
+    <div class="p-4 text-sm text-gray-500 border-t">
+      © 2025 - Jesús Pineda
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="ml-64 flex-1 p-10">
+    <h1 class="text-4xl font-bold text-blue-700 mb-8">Documentación de EFI</h1>
+
+    <section id="descripcion" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">📖 Descripción</h2>
+      <p><strong>Nombre:</strong> EFI</p>
+      <p><strong>Objetivo:</strong> Edición rápida de imágenes eliminando fondos automáticamente con IA.</p>
+      <p><strong>Tecnologías:</strong> Python, OpenCV, PIL, rembg, Tkinter</p>
+    </section>
+
+    <section id="instalacion" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">⚙️ Instalación</h2>
+      <ul class="list-disc list-inside mb-4">
+        <li>Windows, Linux o macOS</li>
+        <li>RAM: 500MB mínimo, 1GB recomendado</li>
+        <li>GPU: Opcional</li>
+      </ul>
+      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+<pre><code>git clone https://github.com/jesuspinedaof/efi.git
+cd efi
+pip install -r requirements.txt</code></pre>
+      </div>
+    </section>
+
+    <section id="funcionalidades" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">✨ Funcionalidades</h2>
+      <ul class="list-disc list-inside">
+        <li>Carga imágenes desde tu sistema</li>
+        <li>Elimina fondos con IA automáticamente</li>
+        <li>Interfaz gráfica sencilla de usar</li>
+      </ul>
+    </section>
+
+    <section id="contribuciones" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">🤝 Contribuciones</h2>
+      <p>¿Ideas o mejoras? ¡Tu ayuda es bienvenida!</p>
+      <ul class="list-disc list-inside mt-2">
+        <li>📧 <a href="mailto:tornioficial@gmail.com" class="text-blue-500">tornioficial@gmail.com</a></li>
+        <li>📱 <a href="https://wa.me/584160601607" target="_blank" class="text-blue-500">WhatsApp</a></li>
+      </ul>
+    </section>
+
+    <section id="recursos" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">📚 Recursos</h2>
+      <ul class="list-disc list-inside">
+        <li><a href="https://docs.python.org/3/" target="_blank" class="text-blue-500">Python</a></li>
+        <li><a href="https://docs.python.org/es/3/library/tkinter.html" target="_blank" class="text-blue-500">Tkinter</a></li>
+        <li><a href="https://github.com/danielgatis/rembg" target="_blank" class="text-blue-500">rembg</a></li>
+        <li><a href="https://docs.opencv.org/master/index.html" target="_blank" class="text-blue-500">OpenCV</a></li>
+        <li><a href="https://pillow.readthedocs.io/en/stable/" target="_blank" class="text-blue-500">PIL</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -81,6 +81,7 @@ Si tiene alguna idea de cómo mejorar esto. Somos todo oído... Cualquier duda o
 ---
 
 ### 📚 Recursos útiles
+[Efi docs]()
 [Python Documentación](https://docs.python.org/3/)   
 [Python Tkinter docs](https://docs.python.org/es/3/library/tkinter.html)   
 [Documentación de rembg](https://github.com/danielgatis/rembg)   
