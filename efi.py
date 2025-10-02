@@ -592,7 +592,7 @@ class BackgroundRemoverApp:
                 messagebox.showerror("Error", f"No se pudo guardar: {e}")
     
     def donate(self):
-        webbrowser.open("https://www.paypal.com/paypalme/tuamigoprogramador")
+        webbrowser.open("https://coindrop.to/jesuspineda")
         
 if __name__ == "__main__":
     root = tk.Tk()

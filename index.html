@@ -7,55 +7,344 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
+
   <!-- Navbar -->
-  <nav class="bg-white shadow">
+  <nav class="bg-white shadow fixed w-full top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-blue-700">EFI</h1>
-      <div class="space-x-6">
+      <div class="flex items-center space-x-3">
+        <img src="resources/efi-icon.ico" alt="Logo EFI" class="w-9 h-9">
+        <h1 class="text-xl font-bold text-gray-700">EFI</h1>
+      </div>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex space-x-6">
         <a href="index.html" class="text-blue-600 font-semibold">Inicio</a>
         <a href="docs.html" class="text-gray-600 hover:text-blue-600">Documentación</a>
         <a href="downloads.html" class="text-gray-600 hover:text-blue-600">Descargas</a>
         <a href="donations.html" class="text-gray-600 hover:text-blue-600">Donaciones</a>
       </div>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-gray-600 focus:outline-none text-4xl font-semibold" id="menu-btn">☰</button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-2 text-blue-600 font-semibold">Inicio</a>
+      <a href="docs.html" class="block px-4 py-2 text-gray-600 hover:text-blue-600">Documentación</a>
+      <a href="downloads.html" class="block px-4 py-2 text-gray-600 hover:text-blue-600">Descargas</a>
+      <a href="donations.html" class="block px-4 py-2 text-gray-600 hover:text-blue-600">Donaciones</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
-    <h2 class="text-4xl font-bold mb-4">EFI - Elimina fondos de imágenes con IA</h2>
-    <p class="text-lg mb-6">Rápido, sencillo y de código abierto. Ideal para diseñadores y creadores de contenido.</p>
+  <section class="text-center py-24 bg-gradient-to-r from-blue-600 to-blue-400 text-white mt-16">
+    <h2 class="text-4xl lg:text-5xl font-bold mb-4">EFI - Elimina fondos de imágenes con IA</h2>
+    <p class="text-lg lg:text-xl mb-6 max-w-2xl mx-auto px-4">Rápido, sencillo y de código abierto. Ideal para diseñadores y creadores de contenido.</p>
     <a href="downloads.html" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-100">Descargar ahora</a>
   </section>
 
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
+  <!-- About EFI -->
+  <section class="max-w-6xl mx-auto py-20 px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="flex justify-center">
+      <img src="resources/page/efi-icon.jpg" alt="Ejemplo EFI" class="rounded-2xl shadow-lg max-w-full">
+    </div>
+    <div>
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">¿Qué es EFI?</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        EFI es una herramienta de código abierto que utiliza Inteligencia Artificial para eliminar
+        fondos de imágenes de forma rápida y precisa. Diseñada para creadores de contenido, 
+        diseñadores y cualquier persona que necesite resultados profesionales sin complicaciones.
+      </p>
+      <p class="text-lg text-gray-700">
+        ¿Mucho trabajo y poco tiempo? EFI te da una mano: automatiza lo técnico para que tú te concentres en lo creativo.
+      </p>
+    </div>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
   <!-- Features -->
-  <section class="max-w-5xl mx-auto py-16 px-6 grid md:grid-cols-3 gap-10">
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-3">Fácil de usar</h3>
-      <p>Interfaz gráfica intuitiva para que cualquier persona pueda editar imágenes sin complicaciones.</p>
+  <section class="max-w-6xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-12">¿Por qué elegir EFI?</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Fácil de usar</h3>
+        <p>Interfaz gráfica intuitiva para que cualquier persona pueda editar imágenes sin complicaciones.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Automatizado</h3>
+        <p>La IA elimina el fondo automáticamente en segundos con resultados de alta calidad.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Multiplataforma</h3>
+        <p>Disponible para Windows, Linux y macOS, optimizado para todos los entornos.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Sin pérdida de calidad</h3>
+        <p>Capaz de remover el fondo de imágenes sin necesidad de desenfocar imágenes.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Modo Offline</h3>
+        <p>Una vez descargado el modelo de IA, puedes remover fondo sin conexión a internet.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-blue-600 mb-3">Resultados en segundos</h3>
+        <p>EFI puede realizar en segundos la eliminación de fondos, sin importar el tamaño de imagen.</p>
+      </div>
     </div>
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-3">Automatizado</h3>
-      <p>La IA elimina el fondo automáticamente en segundos con resultados de alta calidad.</p>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
+  <!-- Galería -->
+  <section class="max-w-6xl mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold text-blue-700 mb-12 text-center">Ejemplos de resultados</h2>
+    <div class="grid sm:grid-cols-2 gap-8">
+      <div class="bg-white p-4 rounded-2xl shadow">
+        <img src="resources/efi-remove5.jpg" alt="Antes" class="rounded-lg mb-2 w-full">
+        <p class="text-sm text-gray-500 text-center">Antes</p>
+      </div>
+      <div class="bg-white p-4 rounded-2xl shadow">
+        <img src="resources/efi-remove6.png" alt="Después" class="rounded-lg mb-2 w-full">
+        <p class="text-sm text-gray-500 text-center">Después</p>
+      </div>
     </div>
-    <div class="bg-white p-6 rounded-2xl shadow">
-      <h3 class="text-xl font-semibold text-blue-600 mb-3">Multiplataforma</h3>
-      <p>Disponible para Windows, Linux y macOS, optimizado para todos los entornos.</p>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
+  <!-- Contribuye -->
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Contribuye a EFI</h2>
+      <p class="text-lg text-gray-700 mb-8">
+        EFI crece gracias al apoyo de la comunidad. 
+        Puedes ayudar con código, donaciones o compartiendo el proyecto.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="https://github.com/jesuspinedaof/efi" target="_blank" 
+           class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-black">
+           Ver en GitHub
+        </a>
+        <a href="donations.html" 
+           class="px-6 py-3 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600">
+           Hacer una donación
+        </a>
+        <a href="https://facebook.com/" target="_blank" 
+           class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+           Compartir en Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
+  <!-- Sugerencias -->
+  <section id="formulario" class="bg-gray-100 py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">¿Tienes sugerencias?</h2>
+      <p class="text-lg text-gray-700 text-center mb-8">
+        Tu opinión nos ayuda a mejorar EFI. Envía tus ideas, problemas o propuestas aquí:
+      </p>
+      <form action="https://formspree.io/f/mjkawder" method="POST" class="bg-white p-8 rounded-2xl shadow space-y-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Nombre</label>
+          <input type="text" name="nombre" placeholder="Escribe tu nombre" 
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Correo electrónico</label>
+          <input type="email" name="email" placeholder="tucorreo@ejemplo.com" 
+                 class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+          <textarea name="mensaje" rows="5" placeholder="Escribe tu sugerencia..." 
+                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" 
+                class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700">
+          Enviar sugerencia
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-200">
+
+  <!-- Preguntas Frecuentes -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Preguntas Frecuentes</h2>
+      
+      <div class="space-y-4">
+        <!-- Pregunta 1 -->
+        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+          <summary class="font-semibold text-lg text-blue-600">¿EFI funciona sin conexión a internet?</summary>
+          <p class="mt-2 text-gray-700">
+            Sí. Una vez descargado el modelo de IA, EFI puede usarse completamente en modo offline.
+          </p>
+        </details>
+
+        <!-- Pregunta 2 -->
+        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+          <summary class="font-semibold text-lg text-blue-600">¿En qué sistemas operativos está disponible?</summary>
+          <p class="mt-2 text-gray-700">
+            Actualmente EFI está disponible para Windows, Linux, macOS y Android, optimizado para distintos entornos.
+          </p>
+        </details>
+
+        <!-- Pregunta 3 -->
+        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+          <summary class="font-semibold text-lg text-blue-600">¿Qué formatos de imagen soporta?</summary>
+          <p class="mt-2 text-gray-700">
+            Soporta formatos comunes como JPG, PNG y BMP. Próximamente añadiremos soporte para más formatos.
+          </p>
+        </details>
+
+        <!-- Pregunta 4 -->
+        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+          <summary class="font-semibold text-lg text-blue-600">¿Que versión es?</summary>
+          <p class="mt-2 text-gray-700">
+            Aún se está desarrollando la versión completa de EFI, esta es solo la versión de prueba.
+          </p>
+        </details>
+
+        <details class="bg-gray-50 p-4 rounded-lg shadow-sm cursor-pointer">
+          <summary class="font-semibold text-lg text-blue-600">
+            ¿Características de la versión completa?
+          </summary>
+          <div class="mt-2 text-gray-700">
+            <p>La versión completa de EFI está en desarrollo, pero incluirá características como:</p>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li><strong>Modo personas:</strong> Eliminar el fondo de personas y reemplazarlo por fondos sólidos o personalizables.</li>
+              <li><strong>Selección del área:</strong> Seleccionar con un puntero el área a conservar, eliminando fondos y objetos fuera del área seleccionada.</li>
+              <li><strong>Recursos para creadores de contenido:</strong> Miles de recursos como imágenes, clips de videos y animaciones libres de derechos de autor. <span class="italic text-sm text-gray-500">Esta característica no está confirmada aún.</span></li>
+            </ul>
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="text-center py-16">
+  <section class="text-center py-16 px-4">
     <h3 class="text-2xl font-semibold mb-4">¿Listo para probar EFI?</h3>
     <p class="mb-6">Explora la documentación o descarga la aplicación ahora mismo.</p>
-    <div class="space-x-4">
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a href="docs.html" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">Ver documentación</a>
       <a href="downloads.html" class="px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300">Ir a descargas</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500 text-sm border-t">
-    © 2025 - Jesús Pineda | Licencia MIT
+  <footer class="bg-gray-900 text-gray-300 py-10 mt-16 px-6">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <img src="resources/page/efi-icon-footer.jpg" alt="Logo EFI" class="w-20 h-20">
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">EFI</h4>
+        <p class="text-sm">Elimina fondos de imágenes con inteligencia artificial. Rápido y sencillo. Ideal para el uso diario</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Enlaces rápidos</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+          <li><a href="docs.html" class="hover:text-white">Documentación</a></li>
+          <li><a href="downloads.html" class="hover:text-white">Descargas</a></li>
+          <li><a href="donations.html" class="hover:text-white">Donaciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Síguenos</h4>
+        <div class="flex space-x-4">
+          <a href="https://github.com/jesuspinedaof/efi" class="hover:text-white">GitHub</a>
+          <a href="https://www.facebook.com/Tuamigoprogramador" class="hover:text-white">Facebook</a>
+          <a href="https://wa.me/584160601607" class="hover:text-white">WhatsApp</a>
+          <a href="https://linktr.ee/jesuspinedaof" class="hover:text-white">Linktree</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-700 pt-6">
+      © 2025 - Jesús Pineda | Licencia MIT
+    </div>
   </footer>
+
+  <!-- Script navbar móvil -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- Botón Dark Mode -->
+  <button id="dark-toggle" 
+    class="fixed bottom-4 right-4 z-50 bg-gray-800 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-700 transition">
+    🌙
+  </button>
+  <!-- Script del Dark Mode -->
+  <script>
+    const darkToggle = document.getElementById("dark-toggle");
+    const html = document.documentElement;
+
+    // Detecta preferencia del sistema la primera vez
+    if (!localStorage.getItem("theme")) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    // Aplica preferencia guardada
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      darkToggle.textContent = "☀️";
+    }
+
+    darkToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      if (html.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        darkToggle.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        darkToggle.textContent = "🌙";
+      }
+    });
+  </script>
+
+  <style>
+    /* --- Estilos Dark Mode generales --- */
+    .dark body { background-color: #1f2937; color: #f3f4f6; }
+
+    /* Fondos principales */
+    .dark nav, 
+    .dark aside, 
+    .dark main, 
+    .dark section, 
+    .dark footer {
+      background-color: #111827;
+      color: #e5e7eb;
+    }
+
+    /* Tarjetas y bloques */
+    .dark .bg-white { background-color: #1f2937 !important; }
+
+    /* Textos grises */
+    .dark .text-gray-700, 
+    .dark .text-gray-600 { color: #d1d5db !important; }
+
+    /* Sombras menos marcadas */
+    .dark .shadow, 
+    .dark .shadow-lg, 
+    .dark .shadow-xl { box-shadow: 0 0 0 1px rgba(255,255,255,0.05) !important; }
+
+    /* 🔑 Respetar hovers originales: 
+       NO se sobreescriben los bg-blue-*, bg-green-* ni similares */
+  </style>
 </body>
 </html>

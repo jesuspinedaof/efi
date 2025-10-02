@@ -9,76 +9,261 @@
 <body class="bg-gray-50 text-gray-800 font-sans flex">
 
   <!-- Sidebar -->
-  <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 flex flex-col">
+  <aside class="w-72 h-screen bg-white shadow-md fixed top-0 left-0 hidden md:flex flex-col z-40">
     <div class="p-6 flex items-center space-x-3 border-b">
-      <img src="logo.svg" alt="EFI Logo" class="h-8">
-      <span class="text-lg font-bold text-blue-600">EFI Docs</span>
+      <img src="resources/efi-icon.ico" alt="Logo EFI" class="w-9 h-9">
+      <span class="text-xl font-bold text-gray-700">EFI Docs</span>
     </div>
     <nav class="flex-1 p-4 space-y-3 text-gray-700">
-      <a href="#descripcion" class="block hover:text-blue-600">Descripción</a>
+      <a href="#introduccion" class="block hover:text-blue-600">Introducción</a>
+      <a href="#requisitos" class="block hover:text-blue-600">Requisitos</a>
       <a href="#instalacion" class="block hover:text-blue-600">Instalación</a>
-      <a href="#funcionalidades" class="block hover:text-blue-600">Funcionalidades</a>
-      <a href="#contribuciones" class="block hover:text-blue-600">Contribuciones</a>
-      <a href="#recursos" class="block hover:text-blue-600">Recursos</a>
+      <a href="#primeros-pasos" class="block hover:text-blue-600">Primeros pasos</a>
+      <a href="#caracteristicas" class="block hover:text-blue-600">Características</a>
+      <a href="#api" class="block hover:text-blue-600">Referencia de API</a>
+      <a href="#ejemplos" class="block hover:text-blue-600">Ejemplos</a>
+      <a href="#faq" class="block hover:text-blue-600">Preguntas frecuentes</a>
+      <a href="#contribuir" class="block hover:text-blue-600">Contribuir</a>
+      <a href="#recursosUtilizados" class="block hover:text-blue-600">Recursos utilizados</a>
+      <a href="#licencia" class="block hover:text-blue-600">Licencia</a>
     </nav>
-    <div class="p-4 text-sm text-gray-500 border-t">
-      © 2025 - Jesús Pineda
-    </div>
+    <div class="p-4 text-sm text-gray-500 border-t">© 2025 - Jesús Pineda</div>
   </aside>
 
-  <!-- Content -->
-  <main class="ml-64 flex-1 p-10">
+  <!-- Botón menú móvil -->
+  <button id="sidebar-toggle" class="md:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white px-3 py-2 rounded-lg shadow text-4xl font-semibold">☰</button>
+
+  <!-- Contenido principal -->
+  <main class="flex-1 md:ml-72 p-6 md:p-12">
     <h1 class="text-4xl font-bold text-blue-700 mb-8">Documentación de EFI</h1>
 
-    <section id="descripcion" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">📖 Descripción</h2>
-      <p><strong>Nombre:</strong> EFI</p>
-      <p><strong>Objetivo:</strong> Edición rápida de imágenes eliminando fondos automáticamente con IA.</p>
-      <p><strong>Tecnologías:</strong> Python, OpenCV, PIL, rembg, Tkinter</p>
-    </section>
-
-    <section id="instalacion" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">⚙️ Instalación</h2>
-      <ul class="list-disc list-inside mb-4">
-        <li>Windows, Linux o macOS</li>
-        <li>RAM: 500MB mínimo, 1GB recomendado</li>
-        <li>GPU: Opcional</li>
-      </ul>
-      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
-<pre><code>git clone https://github.com/jesuspinedaof/efi.git
-cd efi
-pip install -r requirements.txt</code></pre>
+    <!-- Introducción -->
+    <section id="introduccion" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Introducción</h2>
+      <p class="text-gray-700 mb-4">EFI es una aplicación de código abierto diseñada para eliminar fondos de imágenes usando Inteligencia Artificial. Su objetivo es ofrecer resultados profesionales de manera rápida, tanto para usuarios principiantes como para profesionales creativos.</p>
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+        <p class="text-sm text-blue-800">👉 EFI es multiplataforma: disponible en Windows, Linux, macOS y Android.</p>
       </div>
     </section>
 
-    <section id="funcionalidades" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">✨ Funcionalidades</h2>
-      <ul class="list-disc list-inside">
-        <li>Carga imágenes desde tu sistema</li>
-        <li>Elimina fondos con IA automáticamente</li>
-        <li>Interfaz gráfica sencilla de usar</li>
+    <!-- Requisitos -->
+    <section id="requisitos" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Requisitos</h2>
+      <ol class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Windows: 7/8/10/11. 32-64Bits</li>
+        <li>RAM: 500MB Mínimo | 1GB Recomendado.</li>
+        <li>GPU: (Opcional), el programa se adapta a equipos sin aceleración gráfica.</li>
+        <li>Almacenamiento: 200MB libres en el dispositivo.</li>
+        <li>Conexión a internet: Solo la primera vez.</li>
+      </ol>
+    </section>
+
+    <!-- Instalación -->
+    <section id="instalacion" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Instalación</h2>
+      <p class="mb-4">Puedes instalar EFI en tu sistema siguiendo las instrucciones:</p>
+
+      <h3 class="font-semibold mt-4">Windows / macOS</h3>
+      <p class="text-gray-700 mb-2">Descarga el instalador desde la sección de <a href="downloads.html" class="text-blue-600 font-semibold">Descargas</a> y sigue el asistente.</p>
+
+      <h3 class="font-semibold mt-4">Linux</h3>
+      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+        <pre><code>sudo dpkg -i efi.deb</code></pre>
+        <br>
+        <pre><code># o usando AppImage</code></pre>
+        <pre><code>chmod +x efi.AppImage</code></pre>
+        <pre><code>./efi.AppImage</code></pre>
+      </div>
+
+      <h3 class="font-semibold mt-4">Código fuente</h3>
+      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+        <pre><code>git clone https://github.com/jesuspinedaof/efi.git</code></pre>
+        <pre><code>cd efi</code></pre>
+        <pre><code>pip install -r requirements.txt</code></pre>
+      </div>
+    </section>
+
+    <!-- Primeros pasos -->
+    <section id="primeros-pasos" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Primeros pasos</h2>
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>Inicia la aplicación EFI.</li>
+        <li>Carga una imagen en formato PNG o JPG.</li>
+        <li>Haz clic en <strong>"Eliminar fondo"</strong>.</li>
+        <li>Exporta tu imagen en PNG transparente o con un nuevo fondo.</li>
+      </ol>
+    </section>
+
+    <!-- Características -->
+    <section id="caracteristicas" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Características</h2>
+      <ul class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 p-1">
+        <li class="bg-white shadow rounded-lg p-4">Eliminación de fondo con IA</li>
+        <li class="bg-white shadow rounded-lg p-4">Soporte para PNG, JPG y BMP</li>
+        <li class="bg-white shadow rounded-lg p-4">Sin conexión a internet</li>
+        <li class="bg-white shadow rounded-lg p-4">Optimización para GPU (si está disponible)</li>
       </ul>
     </section>
 
-    <section id="contribuciones" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">🤝 Contribuciones</h2>
-      <p>¿Ideas o mejoras? ¡Tu ayuda es bienvenida!</p>
-      <ul class="list-disc list-inside mt-2">
-        <li>📧 <a href="mailto:tornioficial@gmail.com" class="text-blue-500">tornioficial@gmail.com</a></li>
-        <li>📱 <a href="https://wa.me/584160601607" target="_blank" class="text-blue-500">WhatsApp</a></li>
+    <!-- API -->
+    <section id="api" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Referencia de API</h2>
+      <p class="mb-4 text-gray-700">El equipo está desarrollando e integrando mejoras funcionales para asegurar su disponibilidad en futuras versiones.</p>
+      <div class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+        <pre><code>from efi import remover_fondo
+
+        # Cargar imagen
+        resultado = remover_fondo("imagen.jpg")
+
+        # Guardar resultado
+        resultado.save("imagen_sin_fondo.png")
+        </code></pre>
+      </div>
+      <p class="mt-3 text-sm text-gray-600">La API está pensada para integrarse en pipelines de edición o scripts personalizados.</p>
+    </section>
+
+    <!-- Ejemplos -->
+    <section id="ejemplos" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Ejemplos</h2>
+      <p class="text-gray-700 mb-4">Algunos ejemplos de lo que EFI puede hacer:</p>
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg shadow p-4">
+          <h4 class="font-semibold mb-2">Original</h4>
+          <img src="resources/efi-remove3.jpg" alt="Ejemplo original" class="rounded">
+        </div>
+        <div class="bg-white rounded-lg shadow p-4">
+          <h4 class="font-semibold mb-2">Fondo removido</h4>
+          <img src="resources/efi-remove4.png" alt="Ejemplo original" class="rounded">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Preguntas frecuentes</h2>
+      <details class="bg-gray-100 p-4 rounded-lg mb-2">
+        <summary class="font-semibold cursor-pointer">¿Puedo usar EFI sin internet?</summary>
+        <p class="mt-2 text-gray-700">Sí, tras descargar el modelo de IA puedes usarlo sin conexión.</p>
+      </details>
+      <details class="bg-gray-100 p-4 rounded-lg mb-2">
+        <summary class="font-semibold cursor-pointer">¿Disponible para versiones anteriores de Windows?</summary>
+        <p class="mt-2 text-gray-700">Sí, EFI soporta las versiones de Windows 7/8/10/11.</p>
+      </details>
+      <details class="bg-gray-100 p-4 rounded-lg mb-2">
+        <summary class="font-semibold cursor-pointer">¿Es gratuito?</summary>
+        <p class="mt-2 text-gray-700">Sí, EFI es open source bajo licencia MIT.</p>
+      </details>
+    </section>
+
+    <!-- Contribuir -->
+    <section id="contribuir" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Contribuir</h2>
+      <p class="text-gray-700 mb-4">Para mantener EFI actualizado puedes contribuir al proyecto</p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Reportando bugs en <a href="https://github.com/jesuspinedaof/efi/issues" class="text-blue-600">GitHub Issues</a></li>
+        <li>Enviando pull requests</li>
+        <li>Compartiendo con amigos</li>
+        <li>Apoyando el proyecto <a href="https://coindrop.to/jesuspineda" class="text-blue-600">Propinas</a></li>
+
       </ul>
     </section>
 
-    <section id="recursos" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">📚 Recursos</h2>
-      <ul class="list-disc list-inside">
-        <li><a href="https://docs.python.org/3/" target="_blank" class="text-blue-500">Python</a></li>
-        <li><a href="https://docs.python.org/es/3/library/tkinter.html" target="_blank" class="text-blue-500">Tkinter</a></li>
-        <li><a href="https://github.com/danielgatis/rembg" target="_blank" class="text-blue-500">rembg</a></li>
-        <li><a href="https://docs.opencv.org/master/index.html" target="_blank" class="text-blue-500">OpenCV</a></li>
-        <li><a href="https://pillow.readthedocs.io/en/stable/" target="_blank" class="text-blue-500">PIL</a></li>
+    <!-- Recursos utilizados lib/mod/etc -->
+    <section id="recursosUtilizados" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Recursos utilizados</h2>
+      <p class="text-gray-700 mb-4">Librerías y modulos aplicados:</p>
+      <ul class="list-disc list-inside text-gray-700">
+        <a href="https://docs.python.org/3" class="text-blue-600">Python documentación</a>
+        <br>
+        <a href="https://docs.python.org/es/3/library/tkinter.html" class="text-blue-600">Python Tkinter docs</a>
+        <br>
+        <a href="https://github.com/danielgatis/rembg" class="text-blue-600">Documentación de rembg</a>
+        <br>
+        <a href="https://pillow.readthedocs.io/en/stable" class="text-blue-600">Guía de PIL</a>
+        <br>
+        <a href="https://docs.opencv.org/master/index.html" class="text-blue-600">OpenCV dosc</a>
       </ul>
+    </section>
+
+    <!-- Licencia -->
+    <section id="licencia" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-3">Licencia</h2>
+      <p class="text-gray-700">Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo <code>LICENSE</code> para más detalles. <a href="https://github.com/jesuspinedaof/efi/blob/main/LICENSE" class="text-blue-600">Aquí</a></p>
     </section>
   </main>
+
+  <script>
+    const btn = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('aside');
+    btn.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  </script>
+  <!-- Buttom Dark Mode -->
+  <button id="dark-toggle" 
+    class="fixed bottom-4 right-4 z-50 bg-gray-800 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-700 transition">
+    🌙
+  </button>
+
+  <script>
+    const darkToggle = document.getElementById("dark-toggle");
+    const html = document.documentElement;
+
+    // Detecta preferencia del sistema la primera vez
+    if (!localStorage.getItem("theme")) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    // Aplica preferencia guardada
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      darkToggle.textContent = "☀️";
+    }
+
+    darkToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      if (html.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        darkToggle.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        darkToggle.textContent = "🌙";
+      }
+    });
+  </script>
+
+  <style>
+    /* --- Estilos Dark Mode generales --- */
+    .dark body { background-color: #1f2937; color: #f3f4f6; }
+
+    /* Fondos principales */
+    .dark nav, 
+    .dark aside, 
+    .dark main, 
+    .dark section, 
+    .dark footer {
+      background-color: #111827;
+      color: #e5e7eb;
+    }
+
+    /* Tarjetas y bloques */
+    .dark .bg-white { background-color: #1f2937 !important; }
+
+    /* Textos grises */
+    .dark .text-gray-700, 
+    .dark .text-gray-600 { color: #d1d5db !important; }
+
+    /* Sombras menos marcadas */
+    .dark .shadow, 
+    .dark .shadow-lg, 
+    .dark .shadow-xl { box-shadow: 0 0 0 1px rgba(255,255,255,0.05) !important; }
+
+    /* 🔑 Respetar hovers originales: 
+       NO se sobreescriben los bg-blue-*, bg-green-* ni similares */
+  </style>
 </body>
 </html>

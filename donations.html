@@ -7,26 +7,37 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
+
   <!-- Navbar -->
-  <nav class="bg-white shadow">
+  <nav class="bg-white shadow fixed w-full top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-2">
-        <img src="logo.svg" alt="EFI Logo" class="h-6">
-        <span class="font-bold text-blue-700">EFI</span>
+        <img src="resources/efi-icon.ico" alt="Logo EFI" class="w-9 h-9">
+        <span class="text-xl font-bold text-gray-700">EFI</span>
       </div>
-      <div class="flex items-center space-x-6">
+      <!-- Desktop menu -->
+      <div class="hidden md:flex space-x-6">
         <a href="index.html" class="hover:text-blue-600">Inicio</a>
         <a href="docs.html" class="hover:text-blue-600">Documentación</a>
         <a href="downloads.html" class="hover:text-blue-600">Descargas</a>
         <a href="donations.html" class="text-blue-600 font-semibold">Donaciones</a>
       </div>
+      <!-- Mobile menu button -->
+      <button class="md:hidden text-gray-600 focus:outline-none text-4xl font-semibold" id="menu-btn">☰</button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-2 hover:text-blue-600">Inicio</a>
+      <a href="docs.html" class="block px-4 py-2 hover:text-blue-600">Documentación</a>
+      <a href="downloads.html" class="block px-4 py-2 hover:text-blue-600">Descargas</a>
+      <a href="donations.html" class="block px-4 py-2 text-blue-600 font-semibold">Donaciones</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+  <section class="text-center py-24 bg-gradient-to-r from-blue-600 to-blue-400 text-white mt-16">
     <h2 class="text-4xl font-bold mb-4">Apoya el desarrollo de EFI</h2>
-    <p class="text-lg mb-6">Tu donación ayuda a mantener el proyecto gratuito y de código abierto.</p>
+    <p class="text-lg mb-6">Tu donación ayuda a mantener el proyecto actualizado, gratuito y de código abierto.</p>
     <a href="#opciones" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-100">Donar ahora</a>
   </section>
 
@@ -44,51 +55,177 @@
   </section>
 
   <!-- Opciones de donación -->
-  <main id="opciones" class="max-w-5xl mx-auto py-16 px-6">
+  <main id="opciones" class="max-w-6xl mx-auto py-16 px-6">
     <h3 class="text-2xl font-bold text-center mb-12 text-blue-700">Elige tu método de apoyo</h3>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- PayPal -->
       <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-12 mx-auto mb-4" alt="PayPal">
         <h4 class="text-xl font-semibold mb-2">PayPal</h4>
         <p class="text-gray-600 mb-4">Dona fácilmente desde cualquier parte del mundo.</p>
-        <a href="https://www.paypal.com/donate" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+        <a href="https://www.paypal.com/paypalme/Dittus17" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-5"> Donar con PayPal
         </a>
       </div>
 
-      <!-- BuyMeACoffee -->
+      <!-- Ko-Fi -->
       <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
-        <img src="https://cdn.buymeacoffee.com/assets/img/home-page-v3/bmc-new-logo.png" class="h-12 mx-auto mb-4" alt="BuyMeACoffee">
-        <h4 class="text-xl font-semibold mb-2">BuyMeACoffee</h4>
+        <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" class="h-12 mx-auto mb-4" alt="Ko-Fi">
+        <h4 class="text-xl font-semibold mb-2">Ko-Fi</h4>
         <p class="text-gray-600 mb-4">Invítame un café y apoya el desarrollo continuo.</p>
-        <a href="https://www.buymeacoffee.com/" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-yellow-400 text-gray-900 rounded-lg shadow hover:bg-yellow-500">
-          <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" class="h-5"> Invitar un café
+        <a href="https://ko-fi.com/jesuspinedaof" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-yellow-400 text-gray-900 rounded-lg shadow hover:bg-yellow-500">
+          ☕ Invitar un café
         </a>
       </div>
 
-      <!-- Cripto -->
+      <!-- Liberapay -->
       <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
-        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=029" class="h-12 mx-auto mb-4" alt="Crypto">
-        <h4 class="text-xl font-semibold mb-2">Criptomonedas</h4>
-        <p class="text-gray-600 mb-4">Apoya el proyecto con Bitcoin, Ethereum o USDT.</p>
-        <button onclick="document.getElementById('wallets').classList.toggle('hidden')" 
-                class="flex items-center justify-center gap-2 px-5 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700">
-          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=029" class="h-5"> Ver wallets
-        </button>
-        <div id="wallets" class="hidden mt-4 text-sm text-left bg-gray-100 p-4 rounded-lg">
-          <p><strong>BTC:</strong> 1A2b3C4D5e6F...</p>
-          <p><strong>ETH:</strong> 0xAbCdEf123456...</p>
-          <p><strong>USDT:</strong> TAbCdEf123456...</p>
-        </div>
+        <img src="https://images.icon-icons.com/2699/PNG/512/liberapay_logo_icon_171261.png" class="h-12 mx-auto mb-4" alt="Liberapay">
+        <h4 class="text-xl font-semibold mb-2">Liberapay</h4>
+        <p class="text-gray-600 mb-4">Haz una donación recurrente, única o personalizada.</p>
+        <a href="https://liberapay.com/jesuspineda/donate" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-gray-900 text-white rounded-lg shadow hover:bg-yellow-600">
+          Donar en Liberapay
+        </a>
+      </div>
+
+      <!-- Donorbox -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://www.atebits.com/wp-content/uploads/2018/09/word-image-25.png" class="h-12 mx-auto mb-4" alt="Liberapay">
+        <h4 class="text-xl font-semibold mb-2">Donorbox</h4>
+        <p class="text-gray-600 mb-4">Realiza una donación puntual, recurrente o personalizada según tu capacidad.</p>
+        <a href="https://donorbox.org/recaudar-fondos-para-la-version-android" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-sky-400  text-white rounded-lg shadow hover:bg-yellow-600">
+          Apoyar en Donorbox
+        </a>
+      </div>
+
+      <!-- Patreon -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg" class="h-12 mx-auto mb-4" alt="Patreon">
+        <h4 class="text-xl font-semibold mb-2">Patreon</h4>
+        <p class="text-gray-600 mb-4">Apoya con aportes y accede a contenido exclusivo.</p>
+        <a href="https://patreon.com/jesuspineda" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700">
+          Más en Patreon
+        </a>
+      </div>
+
+      <!-- GitHub Sponsors -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition">
+        <img src="https://github.githubassets.com/images/modules/site/sponsors/logo-mona.svg" class="h-12 mx-auto mb-4" alt="GitHub Sponsors">
+        <h4 class="text-xl font-semibold mb-2">GitHub Sponsors</h4>
+        <p class="text-gray-600 mb-4">Apoya el proyecto directamente en GitHub.</p>
+        <a href="https://github.com/sponsors/jesuspinedaof" target="_blank" class="flex items-center justify-center gap-2 px-5 py-2 bg-gray-900 text-white rounded-lg shadow hover:bg-black">
+          Donar en GitHub
+        </a>
       </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500 text-sm border-t">
-    © 2025 - Jesús Pineda | Licencia MIT
+  <footer class="bg-gray-900 text-gray-300 py-10 mt-16 px-6">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <img src="resources/page/efi-icon-footer.jpg" alt="Logo EFI" class="w-20 h-20">
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">EFI</h4>
+        <p class="text-sm">Elimina fondos de imágenes con inteligencia artificial. Rápido y sencillo. Ideal para el uso diario</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Enlaces rápidos</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+          <li><a href="docs.html" class="hover:text-white">Documentación</a></li>
+          <li><a href="downloads.html" class="hover:text-white">Descargas</a></li>
+          <li><a href="donations.html" class="hover:text-white">Donaciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Síguenos</h4>
+        <div class="flex space-x-4">
+          <a href="https://github.com/jesuspinedaof/efi" class="hover:text-white">GitHub</a>
+          <a href="https://www.facebook.com/Tuamigoprogramador" class="hover:text-white">Facebook</a>
+          <a href="https://wa.me/584160601607" class="hover:text-white">WhatsApp</a>
+          <a href="https://linktr.ee/jesuspinedaof" class="hover:text-white">Linktree</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-700 pt-6">
+      © 2025 - Jesús Pineda | Licencia MIT
+    </div>
   </footer>
+
+  <!-- Script navbar móvil -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- Buttom Dark Mode -->
+  <button id="dark-toggle" 
+    class="fixed bottom-4 right-4 z-50 bg-gray-800 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-700 transition">
+    🌙
+  </button>
+
+  <script>
+    const darkToggle = document.getElementById("dark-toggle");
+    const html = document.documentElement;
+
+    // Detecta preferencia del sistema la primera vez
+    if (!localStorage.getItem("theme")) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    // Aplica preferencia guardada
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+      darkToggle.textContent = "☀️";
+    }
+
+    darkToggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      if (html.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        darkToggle.textContent = "☀️";
+      } else {
+        localStorage.setItem("theme", "light");
+        darkToggle.textContent = "🌙";
+      }
+    });
+  </script>
+
+  <style>
+    /* --- Estilos Dark Mode generales --- */
+    .dark body { background-color: #1f2937; color: #f3f4f6; }
+
+    /* Fondos principales */
+    .dark nav, 
+    .dark aside, 
+    .dark main, 
+    .dark section, 
+    .dark footer {
+      background-color: #111827;
+      color: #e5e7eb;
+    }
+
+    /* Tarjetas y bloques */
+    .dark .bg-white { background-color: #1f2937 !important; }
+
+    /* Textos grises */
+    .dark .text-gray-700, 
+    .dark .text-gray-600 { color: #d1d5db !important; }
+
+    /* Sombras menos marcadas */
+    .dark .shadow, 
+    .dark .shadow-lg, 
+    .dark .shadow-xl { box-shadow: 0 0 0 1px rgba(255,255,255,0.05) !important; }
+
+  </style>
 </body>
 </html>
